@@ -6,18 +6,22 @@ let nextId = JSON.parse(localStorage.getItem("nextId"));
 
 // Todo: create a function to generate a unique task id
 function generateTaskId() {
-    
-const uniqueTaskId
+
+const uniqueID = nextId ; // everything that is stores in the next id will be sotrein variable unique ID
+uniqueID.JSON.strigify(localStorage.setItem); // As i like to call it a sanwhich evrything will stigify and stored into Local Storage
+return; // rerurn button in order to stop the function
+
 }
 
 // Todo: create a function to create a task card
 function createTaskCard(task) {
 
+    
 }
 
 // Todo: create a function to render the task list and make cards draggable
 function renderTaskList() {
-
+const=[];
 }
 
 // Todo: create a function to handle adding a new task
