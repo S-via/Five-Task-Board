@@ -10,18 +10,25 @@ function generateTaskId() {
 const uniqueID = nextId ; // everything that is stores in the next id will be sotrein variable unique ID
 uniqueID.JSON.strigify(localStorage.setItem); // As i like to call it a sanwhich evrything will stigify and stored into Local Storage
 return; // rerurn button in order to stop the function
-
 }
+console.log(nextId);
 
 // Todo: create a function to create a task card
 function createTaskCard(task) {
+
+createTaskCard = $('div');
+
+/* const taskContainer= $('<div>');// create a task card container to store 
+const taskHeaderEl = $('<h>');
+const taskInput = $('<p>'); */
+/* createNewElement.task  */ // create a new element to add into task card 
 
     
 }
 
 // Todo: create a function to render the task list and make cards draggable
 function renderTaskList() {
-const=[];
+
 }
 
 // Todo: create a function to handle adding a new task
