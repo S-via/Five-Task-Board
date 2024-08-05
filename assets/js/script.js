@@ -16,11 +16,14 @@ let nextId = JSON.parse(localStorage.getItem("nextId"));
 // Todo: create a function to generate a unique task id
 
 function generateTaskId() {
-    /* 
-    const uniqueID = nextId ; // everything that is stores in the next id will be sotrein variable unique ID
+    
+    const uniqueID = $('.bth bth-success') ;
+    .click.;
+    console.log(uniqueID);
+    // everything that is stores in the next id will be sotrein variable unique ID
     // if (nextId)
     
-    uniqueID.JSON.strigify(localStorage.setItem);  */// As i like to call it a sanwhich evrything will stigify and stored into Local Storage
+    /* uniqueID.JSON.strigify(localStorage.setItem); /// As i like to call it a sanwhich evrything will stigify and stored into Local Storage
 
 return; // rerurn button in order to stop the function
 }
