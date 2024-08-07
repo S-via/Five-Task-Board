@@ -89,6 +89,8 @@ function handleAddTask(event) {
 
 // Todo: create a function to handle deleting a task
 function handleDeleteTask(event) {
+    event.preventDefault();
+    // add event handler everytime delete button is clicked 
 
 }
 
