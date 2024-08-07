@@ -1,7 +1,7 @@
 // Retrieve tasks and nextId from localStorage
 
 let taskList = JSON.parse(localStorage.getItem("tasks"));
-let nextId = JSON.parse(localStorage.getItem("nextId"));
+let nextId = JSON.parse(localStorage.getItem("nextId")); // either a number or null
 
 
 // create an object with key and value for "tasks"
@@ -16,51 +16,52 @@ let nextId = JSON.parse(localStorage.getItem("nextId"));
 // Todo: create a function to generate a unique task id
 
 function generateTaskId() {
-    
-    const uniqueID = $('.bth bth-success') ;
-    .click.;
-    console.log(uniqueID);
-    // everything that is stores in the next id will be sotrein variable unique ID
-    // if (nextId)
-    
-    /* uniqueID.JSON.strigify(localStorage.setItem); /// As i like to call it a sanwhich evrything will stigify and stored into Local Storage
 
-return; // rerurn button in order to stop the function
+    if (nextId === null) { nextId = 1; }
+    else { nextId++; }
+    return nextId;
 }
+
+// everything that is stores in the next id will be sotrein variable unique ID
+// if (nextId)
+
+// uniqueID.JSON.strigify(localStorage.setItem); /// As i like to call it a sanwhich evrything will stigify and stored into Local Storage
+
+
 console.log(nextId);
 
 // Todo: create a function to create a task card
 function createTaskCard(task) {
 
-const taskCard= $('<div>', task.id);//create a task card container to store
-taskCard.addClass
-taskCard.addAttribute 
+    const taskCard = $('<div>', task.id);//create a task card container to store
+    taskCard.addClass
+    taskCard.addAttribute
 
-const taskHeaderEl = $('<h2>Add Task</h2>');
-taskHeaderEl.addClass
+    const taskHeaderEl = $('<h2>Add Task</h2>');
+    taskHeaderEl.addClass
 
 
-const taskTitle= $('<h2>Task Title</h2>');
-taskTitle.addClass
-const titleInput = $('<input>');
-titleInput.addClass
+    const taskTitle = $('<h2>Task Title</h2>');
+    taskTitle.addClass
+    const titleInput = $('<input>');
+    titleInput.addClass
 
-const taskDate = $('<h2>Task Date</h2>');
-taskDate.addClass
+    const taskDate = $('<h2>Task Date</h2>');
+    taskDate.addClass
 
-const taskDescription = $ ('<h2>Task Description</h2>');
-taskDescription.addClass
-const taskInput = $('<input>');
-taskInput.addClass
+    const taskDescription = $('<h2>Task Description</h2>');
+    taskDescription.addClass
+    const taskInput = $('<input>');
+    taskInput.addClass
 
-const taskButton = $('<button>Add Task</button');
-taskButton.on('click');
-$(".container").append.createTaskCard;
-console.log("taskCard");
+    const taskButton = $('<button>Add Task</button');
+    taskButton.on('click');
+    $(".container").append.createTaskCard;
+    console.log("taskCard");
 
-/* createNewElement.task  */ // create a new element to add into task card 
+    /* createNewElement.task  */ // create a new element to add into task card 
 
-    
+
 }
 
 // Todo: create a function to render the task list and make cards draggable
@@ -69,12 +70,12 @@ function renderTaskList() {
 }
 
 // Todo: create a function to handle adding a new task
-function handleAddTask(event){
+function handleAddTask(event) {
 
 }
 
 // Todo: create a function to handle deleting a task
-function handleDeleteTask(event){
+function handleDeleteTask(event) {
 
 }
 
