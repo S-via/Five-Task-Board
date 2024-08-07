@@ -33,34 +33,30 @@ console.log(nextId);
 
 // Todo: create a function to create a task card
 function createTaskCard(task) {
+    // create a new elements to add into taskcard 
 
-    const taskCard = $('<div>', task.id);//create a task card container to store
-    taskCard.addClass
-    taskCard.addAttribute
+    const taskCard = $('<div>').addClass('card-body'); /* //create a task card container to store */
+   
 
-    const taskHeaderEl = $('<h2>Add Task</h2>');
-    taskHeaderEl.addClass
+    const taskHeader = $('<div>').text('Title:'+ task.title); // created taskHeader and have it append to taskCard
+    taskCard.append(taskHeader)
 
 
-    const taskTitle = $('<h2>Task Title</h2>');
-    taskTitle.addClass
-    const titleInput = $('<input>');
-    titleInput.addClass
+    const taskBody =$('<div>'); // created a task body 
 
-    const taskDate = $('<h2>Task Date</h2>');
-    taskDate.addClass
+    const taskDescription = $('<p>').text('Description' + task.description); //task description 
+   
 
-    const taskDescription = $('<h2>Task Description</h2>');
-    taskDescription.addClass
-    const taskInput = $('<input>');
-    taskInput.addClass
+    const taskDate = $('<p>')(task.date); // created a paragraph to add task date  
 
-    const taskButton = $('<button>Add Task</button');
-    taskButton.on('click');
-    $(".container").append.createTaskCard;
-    console.log("taskCard");
+    const taskDButton = $('<button>').task('Delete Task').on('click',handleDeleteTask);
 
-    /* createNewElement.task  */ // create a new element to add into task card 
+    taskBody.append(taskDescription,taskDate,taskDButton); // append taskDescription,taskDate,taskDButton to taskBody
+    taskCard.append(taskHeader,taskBody); // append elements taskHeader,TaskBody into taskCard
+
+    return taskCard;
+    
+
 
 
 }
