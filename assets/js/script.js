@@ -1,6 +1,6 @@
 // Retrieve tasks and nextId from localStorage
 
-let taskList = JSON.parse(localStorage.getItem("tasks"))|| [];
+let taskList = JSON.parse(localStorage.getItem("tasks"))||[];
 let nextId = JSON.parse(localStorage.getItem("nextId")); // either a number or null
 
 
@@ -29,7 +29,7 @@ function generateTaskId() {
 // uniqueID.JSON.strigify(localStorage.setItem); /// As i like to call it a sanwhich evrything will stigify and stored into Local Storage
 
 
-console.log(nextId);
+/* console.log(nextId); */
 
 // Todo: create a function to create a task card
 function createTaskCard(task) {
@@ -39,7 +39,7 @@ function createTaskCard(task) {
    
 
     const taskHeader = $('<div>').text('Title:'+ task.title); // created taskHeader and have it append to taskCard
-    taskCard.append(taskHeader)
+    taskCard.append(taskHeader);
 
 
     const taskBody =$('<div>'); // created a task body 
@@ -47,12 +47,25 @@ function createTaskCard(task) {
     const taskDescription = $('<p>').text('Description' + task.description); //task description 
    
 
-    const taskDate = $('<p>')(task.date); // created a paragraph to add task date  
+    const taskDate = $('<p>').text(task.date); // created a paragraph to add task date  
 
-    const taskDButton = $('<button>').task('Delete Task').on('click',handleDeleteTask);
+    const taskDButton = $('<button>').task('Delete Task').on('click',handleDeleteTask); // task delete button everytime it is clicked function handleDeleteTask will take place
+
+    // set up backround color for each cards depending their status
+    if(task.date && task.status !== 'done'){
+        const now = dayjs(); // it get the current day 
+        const taskDue = dayjs(task.date,'DD/MM/YYYY'); // dayjs formats the date 
+        
+        if (now.isSame(taskDue, 'day')){
+            taskCard.addClass('bg-warning'); //add class to the task with the color in the  ()
+        } else if  (now.isAfter(taskDue)){
+            taskCard.addClass('bd-danger'); 
+        taskDButton.addClass('border-light');        }
+    }
 
     taskBody.append(taskDescription,taskDate,taskDButton); // append taskDescription,taskDate,taskDButton to taskBody
     taskCard.append(taskHeader,taskBody); // append elements taskHeader,TaskBody into taskCard
+
 
     return taskCard;
     
@@ -65,9 +78,12 @@ function createTaskCard(task) {
 function renderTaskList() {
 
     // crated a variable to empty todo, progress 
-    const todoDiv = $('#todo-cards').empty();
-    const progressDiv = $('#in-progress-cards').empty();
-    const doneDiv = $('#done-cards').empty();
+    const todoDiv = $('#todo-cards')
+    todoDiv.empty();
+    const progressDiv = $('#in-progress-cards')
+    progressDiv.empty();
+    const doneDiv = $('#done-cards')
+    doneDiv.empty();
 
     //  for loop to iterate through cards , for every card empty them and create a new task card 
     for (let task of taskList){
@@ -105,6 +121,7 @@ function handleAddTask(event) {
         title: tT,
         date: tD,
         description: tN,
+        status: 'to-do'
         
     };
     taskList.push(newTask);
@@ -132,11 +149,11 @@ $(document).ready(function () {
 // render taskList
 renderTaskList();
 $('#formButton').on('click', handleAddTask);
+// due date field as a datepicker
+$('#datepicker').datepicker();
 
 // add event listners
 
 // make lane droppable 
 
-// due date field as a datepicker
-$('#datepicker').datepicker();
 });
