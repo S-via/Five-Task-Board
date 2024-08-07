@@ -17,9 +17,10 @@ let nextId = JSON.parse(localStorage.getItem("nextId")); // either a number or n
 
 function generateTaskId() {
 
-    if (nextId === null) { nextId = 1; }
-    else { nextId++; }
-    return nextId;
+    if (nextId === null) // If nextId is strictly equal to null
+        { nextId = 1; } // make nextId equal to 1 
+    else { nextId++; } // if not make nextId increment
+    return nextId; // then return the value for nextId
 }
 
 // everything that is stores in the next id will be sotrein variable unique ID
