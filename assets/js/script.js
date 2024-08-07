@@ -68,6 +68,22 @@ function renderTaskList() {
 
 // Todo: create a function to handle adding a new task
 function handleAddTask(event) {
+    event.preventDefault();
+
+    const tT = $('#task-title-input').val(); // get value of input task title input
+    const tD = $('#datepicker').val(); // get value of date 
+    const tN = $('#task-name-input').val(); // get value task name input
+
+    const newTask ={
+        id: generateTaskId(),
+        title: tT,
+        date: tD,
+        description: tN,
+        
+    };
+    taskList.push(newTask);
+    localStorage.setItem('tasks', JSON.stringify(taskList));
+    renderTaskList();
 
 }
 
@@ -85,10 +101,13 @@ function handleDrop(event, ui) {
 $(document).ready(function () {
 
 // render taskList
+renderTaskList();
+$('#formButton').on('click', handleAddTask);
 
 // add event listners
 
 // make lane droppable 
 
 // due date field as a datepicker
+$('#datepicker').datepicker();
 });
