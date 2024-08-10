@@ -35,7 +35,8 @@ function generateTaskId() {
 function createTaskCard(task) {
     // create a new elements to add into taskcard 
 
-    const taskCard = $('<div>').addClass('card-body'); /* //create a task card container to store */
+    const taskCard = $('<div>')
+    taskCard.addClass('card-body').addClass('border'); /* //create a task card container to store */
 
 
     const taskHeader = $('<div>').text('Title:' + task.title); // created taskHeader and have it append to taskCard
@@ -57,9 +58,9 @@ function createTaskCard(task) {
         const taskDueDate = dayjs(task.date, 'DD/MM/YYYY'); // dayjs formats the date 
 
         if (now.isSame(taskDueDate, 'day')) {
-            taskCard.addClass('bg-warning'); //add class to the task with the color in the  ()
+            taskCard.addClass('bg-warning'); //add class to the task with the color in the red
         } else if (now.isAfter(taskDueDate)) {
-            taskCard.addClass('bd-danger');
+            taskCard.addClass('bg-danger'); // added class to the task with the color yellow 
             taskDButton.addClass('border-light');
         }
     }
@@ -134,8 +135,8 @@ function handleAddTask(event) {
 
 // Todo: create a function to handle deleting a task
 function handleDeleteTask(event) {
-
     event.handleDeleteTask();
+
     taskCard.on('click'.handleDeleteTask);
     }
     // everytime this button is clicked 
