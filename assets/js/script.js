@@ -49,7 +49,7 @@ function createTaskCard(task) {
 
     const taskDate = $('<p>').text(task.date); // created a paragraph to add task date  
 
-    const taskDButton = $('<button>').text('Delete Task').on('click', handleDeleteTask); // task delete button everytime it is clicked function handleDeleteTask will take place
+    const taskDButton = $('<button>').text('Delete Task').on('click', handleDeleteTask);   //task  delete button everytime it is clicked function handleDeleteTask will take place
 
     // set up backround color for each cards depending their status
     if (task.date && task.status !== 'done') {
@@ -134,10 +134,20 @@ function handleAddTask(event) {
 
 // Todo: create a function to handle deleting a task
 function handleDeleteTask(event) {
-    /* event.preventDefault(); */
+
+    event.handleDeleteTask();
+    taskCard.on('click'.handleDeleteTask);
+    }
+    // everytime this button is clicked 
+    // delete task from board 
+    // task are the taskCards
+
+    
+   /*  $('<button').on('click', handleDeleteTask); */
+    
     // add event handler everytime delete button is clicked 
 
-}
+
 
 // Todo: create a function to handle dropping a task into a new status lane
 function handleDrop(event, ui) {
