@@ -3,7 +3,6 @@
 let taskList = JSON.parse(localStorage.getItem("tasks")) || [];
 let nextId = JSON.parse(localStorage.getItem("nextId")); // either a number or null
 
-
 // create an object with key and value for "tasks"
 // taskList = ""; {:}
 // create an object with key and value for "nextId"
@@ -28,10 +27,10 @@ function generateTaskId() {
 
 // uniqueID.JSON.strigify(localStorage.setItem); /// As i like to call it a sanwhich evrything will stigify and stored into Local Storage
 
-
 /* console.log(nextId); */
 
 // Todo: create a function to create a task card
+
 function createTaskCard(task) {
     // create a new elements to add into taskcard 
 
@@ -73,12 +72,13 @@ function createTaskCard(task) {
 
 
 
-
 }
+
 
 // Todo: create a function to render the task list and make cards draggable
 function renderTaskList() {
 
+    // render task list
     // crated a variable to empty todo, progress 
     const todoList = $('#todo-cards')
     todoList.empty();
@@ -87,6 +87,7 @@ function renderTaskList() {
     const doneList = $('#done-cards')
     doneList.empty();
 
+    // iterate through the card from cards
     //  for loop to iterate through cards , for every card empty them and create a new task card 
     for (let task of taskList) {
         if (task.status === 'to-do') {
@@ -99,16 +100,12 @@ function renderTaskList() {
 
     }
 
-
-
-
-    // render task list
-    // get from local storage
-    //set up the status lanes 
-    // iterate through the card from cards
-    //make cards draggabl
-
 }
+
+// get from local storage
+//set up the status lanes 
+//make cards draggabl
+
 
 // Todo: create a function to handle adding a new task
 function handleAddTask(event) {
@@ -136,23 +133,25 @@ function handleAddTask(event) {
 // Todo: create a function to handle deleting a task
 function handleDeleteTask(event) {
     event.handleDeleteTask();
+}
 
-    taskCard.on('click'.handleDeleteTask);
-    }
-    // everytime this button is clicked 
-    // delete task from board 
-    // task are the taskCards
+/* taskCard.on('click'.handleDeleteTask);
+} */
+// everytime this button is clicked 
+// delete task from board 
+// task are the taskCards
 
-    
-   /*  $('<button').on('click', handleDeleteTask); */
-    
-    // add event handler everytime delete button is clicked 
+
+/*  $('<button').on('click', handleDeleteTask); */
+
+// add event handler everytime delete button is clicked 
 
 
 
 // Todo: create a function to handle dropping a task into a new status lane
 function handleDrop(event, ui) {
-    // event 
+    // event.preventDefault(); 
+    const tasks = generateTaskId();
 }
 
 // Todo: when the page loads, render the task list, add event listeners, make lanes droppable, and make the due date field a date picker
