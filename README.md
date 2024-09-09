@@ -16,7 +16,15 @@ they WANT a task board.
 
 
 ## How to Use it 
-(Description of Web Page)
-(photo here)
+When you open Task Board, there will be a green button labeled " Add Task " <br>
+[!]()
+When button is clicked you will be prompted with "Task Title" , "Task Date", Task Description<br> 
+[!]()
+<br>
+Once user fills out input, tasks will appear in the To Do Column
+<br> where user will be able to drag them to its correct column
+
 ## References
-* 
+* https://api.jqueryui.com/droppable/
+* https://jqueryui.com/
+
