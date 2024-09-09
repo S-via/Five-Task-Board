@@ -14,4 +14,5 @@ body {
 .task-card:hover {
   cursor: grab;
 }
-#draggable { width: 150px; height: 150px; padding: 0.5em; }
+#draggable { width: 150px; height: 150px; padding: 0.5em; float: left; margin: 10px 10px 10px 0; }
+#droppable { width: 150px; height: 150px; padding: 0.5em; float: left; margin:10px;}

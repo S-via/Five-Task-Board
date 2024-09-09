@@ -3,13 +3,6 @@
 let taskList = JSON.parse(localStorage.getItem("tasks")) || [];
 let nextId = JSON.parse(localStorage.getItem("nextId")); // either a number or null
 
-// OLD TEST CODE >> create an object with key and value for "tasks"
-// taskList = ""; {:}
-// create an object with key and value for "nextId"
-// nextId = ""; {:}
-
-// then taskList.JSON.strigify(localStorage.setItem("tasks"));
-// then JSON.strigify(localStorage.setItem("nextId"));
 
 
 // Todo: create a function to generate a unique task id
@@ -25,9 +18,6 @@ function generateTaskId() {
 // everything that is stores in the next id will be sotrein variable unique ID
 // if (nextId)
 
-// uniqueID.JSON.strigify(localStorage.setItem); /// As i like to call it a sanwhich evrything will stigify and stored into Local Storage
-
-/* console.log(nextId); */
 
 // Todo: create a function to create a task card
 
@@ -69,11 +59,7 @@ function createTaskCard(task) {
 
 
     return taskCard;
-
-
-
 }
-
 
 // Todo: create a function to render the task list and make cards draggable
 function renderTaskList() {
@@ -89,6 +75,8 @@ function renderTaskList() {
 
     // iterate through the card from cards
     //  for loop to iterate through cards , for every card empty them and create a new task card 
+
+    //set up the status lanes 
     for (let task of taskList) {
         if (task.status === 'to-do') {
             todoList.append(createTaskCard(task));
@@ -99,12 +87,24 @@ function renderTaskList() {
         }
 
     }
+    //make cards draggabl
+    $('#draggable').draggable({
+        opacity: 0.7,
+        zIndex: 100,
+        helper: function (e) {
+            const original = $(e.target).hasClass('ui-draggable')
+                ? $(e.target)
+                : $(e.target).closest('.ui-draggable');
+            return original, clone().css({
+                width: original.outerWidth(),
+            });
 
+        },
+    });
 }
 
+
 // get from local storage
-//set up the status lanes 
-//make cards draggabl
 
 
 // Todo: create a function to handle adding a new task
@@ -134,25 +134,29 @@ function handleAddTask(event) {
 function handleDeleteTask(event) {
     event.handleDeleteTask();
 }
+// $('<button').on('click', handleDeleteTask);
 
-/* taskCard.on('click'.handleDeleteTask);
-} */
+// taskCard.on('click'.handleDeleteTask);
+
 // everytime this button is clicked 
 // delete task from board 
 // task are the taskCards
-
-
-/* TEST CODE $('<button').on('click', handleDeleteTask); */
-
 // add event handler everytime delete button is clicked 
 
 
 
+
 // Todo: create a function to handle dropping a task into a new status lane
-function handleDrop(event, ui) {
-    // TEST CODE event.preventDefault(); 
-    /* TEST CODE const tasks = generateTaskId(); */
-}
+function handleDrop(event, ui) {}
+
+
+/*     $("#droppable").droppable({
+        drop: handleDrop(event, ui) {
+        $( this )
+        .addClass("ui-state-highlight")
+            .find(createTaskCard(task))
+            .html("todo-cards", "in-progress-cards", "done-cards");}})} */
+
 
 // Todo: when the page loads, render the task list, add event listeners, make lanes droppable, and make the due date field a date picker
 $(document).ready(function () {
@@ -166,5 +170,5 @@ $(document).ready(function () {
     // add event listners
 
     // make lane droppable 
-
+   
 });
