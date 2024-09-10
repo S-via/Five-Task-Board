@@ -17,12 +17,13 @@ they WANT a task board.
 
 ## How to Use it 
 When you open Task Board, there will be a green button labeled " Add Task " <br>
-[!]()
+[!](images/Image-7.png)
 When button is clicked you will be prompted with "Task Title" , "Task Date", Task Description<br> 
-[!]()
+[!](images/Image-8.png)
 <br>
-Once user fills out input, tasks will appear in the To Do Column
-<br> where user will be able to drag them to its correct column
+Once user fills out input, tasks will appear in the To Do Column, where user will be able to drag them to its correct column
+<br>
+[!](images/Image-9.png) 
 
 ## References
 * https://api.jqueryui.com/droppable/
