@@ -11,9 +11,6 @@ they WANT a task board.
 
 * So THAT they can add individual project task, manage their state if progress and track overall project progress accordingly.
 
-## Mock-up
-(image / video)
-
 
 ## How to Use it 
 When you open Task Board, there will be a green button labeled " Add Task " <br>
